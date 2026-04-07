@@ -4,7 +4,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 import os
 TOKEN = os.getenv("TOKEN")
-GROUP_ID = ["-1003531096595"]
+GROUP_ID = [-1003531096595]
 
 import asyncio
 

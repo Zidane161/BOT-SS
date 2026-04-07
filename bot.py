@@ -8,21 +8,6 @@ GROUP_ID = [-1003531096595]
 
 import asyncio
 
-async def main():
-    app = ApplicationBuilder().token(TOKEN).build()
-
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("setlive", setlive))
-    app.add_handler(CommandHandler("live", live))
-    app.add_handler(CommandHandler("broadcast", broadcast))
-
-    print("Bot is running...")
-    await app.run_polling()
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-
 users = set()
 LIVE_LINK = "Belum ada live hari ini"
 
@@ -98,6 +83,20 @@ async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
             pass
 
     await update.message.reply_text("✅ Broadcast terkirim ke semua user & grup!")
+
+async def main():
+    app = ApplicationBuilder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("setlive", setlive))
+    app.add_handler(CommandHandler("live", live))
+    app.add_handler(CommandHandler("broadcast", broadcast))
+
+    print("Bot is running...")
+    await app.run_polling()
+
+if __name__ == "__main__":
+    asyncio.run(main())
 
 # RUN
 app = ApplicationBuilder().token(TOKEN).build()

@@ -2,6 +2,10 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
+import os
+TOKEN = os.getenv("TOKEN")
+GROUP_ID = ["-1003531096595"]
+
 import asyncio
 
 async def main():
@@ -18,9 +22,6 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 
-import os
-TOKEN = os.getenv("TOKEN")
-GROUP_ID = ["-1003531096595"]
 
 users = set()
 LIVE_LINK = "Belum ada live hari ini"

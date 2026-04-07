@@ -78,9 +78,17 @@ async def main():
     app.add_handler(CommandHandler("broadcast", broadcast))
 
     print("Bot is running...")
+
     await app.initialize()
     await app.start()
     await app.updater.start_polling()
+
+    try:
+        await asyncio.Event().wait()
+    finally:
+        await app.updater.stop()
+        await app.stop()
+        await app.shutdown()
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -2,6 +2,22 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
+import asyncio
+
+async def main():
+    app = ApplicationBuilder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("setlive", setlive))
+    app.add_handler(CommandHandler("live", live))
+    app.add_handler(CommandHandler("broadcast", broadcast))
+
+    print("Bot is running...")
+    await app.run_polling()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
 import os
 TOKEN = os.getenv("TOKEN")
 GROUP_ID = ["-1003531096595"]

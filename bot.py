@@ -2,7 +2,8 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN = "8392279747:AAF9BrjGYHBVNoPh894ACYLNdL-4oUmytu8"
+import os
+TOKEN = os.getenv("TOKEN")
 GROUP_ID = ["-1003531096595"]
 
 users = set()

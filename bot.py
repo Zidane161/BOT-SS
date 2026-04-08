@@ -4,7 +4,7 @@ import os
 import asyncio
 
 TOKEN = os.getenv("TOKEN")
-GROUP_IDS = [-1003531096595]
+GROUP_IDS = [-1003531096595, -1003704515669]
 
 users = set()
 LIVE_LINK = "Belum ada live hari ini"
